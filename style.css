@@ -1,0 +1,56 @@
+body{
+    background-color: rgb(27, 27, 27);
+    color: white;
+    margin:0px;
+}
+.container{
+    background-color: #fff;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    margin-top: 35px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px white;
+}
+.container:hover{
+    animation: ease-in-out;
+    box-shadow: 1px 1px 10px white;
+    animation-duration: 100;
+}
+
+#img{
+    width: 200px;height: 200px;
+    border-radius:50%;
+    margin-left: 100px;
+    margin-top: 30px;
+
+}
+.heading{
+    color: rgb(0, 0, 0);
+    width: 160px;
+    margin-left: 120px;
+    font-style: normal;
+    font-family: cursive;
+    margin-top: 1em;
+    text-align: center;
+    font-size: 20px;
+}
+.details{
+    font-size: 12px;
+}
+.buttons{
+    color: black;
+    text-align: center;
+    margin-top: 70px;
+    font-size: 30px;
+}
+.prev{
+    margin-right: 50px;
+}
+.play{
+    margin-right: 9px;
+    margin-left: 9px;
+}
+.next{
+    margin-left: 50px;
+}
