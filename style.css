@@ -4,17 +4,18 @@ body{
     margin:0px;
 }
 .container{
-    background-color: #fff;
+    background-color: rgb(169, 172, 255);
+    padding-top: 1rem;
     width: 400px;
-    height: 400px;
+    height: 500px;
     margin: auto;
-    margin-top: 35px;
+    margin-top: 100px;
     border-radius: 20px;
-    box-shadow: 1px 1px 5px white;
+    box-shadow: 1px 1px 13px 7px rgb(101, 101, 101);
+
 }
 .container:hover{
     animation: ease-in-out;
-    box-shadow: 1px 1px 10px white;
     animation-duration: 100;
 }
 
@@ -22,7 +23,8 @@ body{
     width: 200px;height: 200px;
     border-radius:50%;
     margin-left: 100px;
-    margin-top: 30px;
+    margin-top: 70px;
+    box-shadow:  2px 2px 7px black;
 
 }
 .heading{
@@ -31,18 +33,30 @@ body{
     margin-left: 120px;
     font-style: normal;
     font-family: cursive;
-    margin-top: 1em;
     text-align: center;
-    font-size: 20px;
+    font-size: 1.4rem;
 }
 .details{
     font-size: 12px;
+    margin-top: 4px;
 }
 .buttons{
-    color: black;
+    color: rgb(14, 14, 14);
     text-align: center;
-    margin-top: 45px;
+    margin-top: 70px;
     font-size: 30px;
+    cursor: pointer;
+    text-shadow: 1px 1px 10px 5px black;
+}
+.play:hover{
+    color: rgb(248, 248, 248);
+    background-color: rgb(18, 17, 17);
+    box-shadow: 0px 0px 7px 1px  black;
+}
+.button{
+    padding: 0.7em;
+    border-radius: 50%;
+    filter: drop-shadow(0em,3em,1em 1em black);
 }
 .prev{
     margin-right: 50px;
@@ -50,7 +64,18 @@ body{
 .play{
     margin-right: 9px;
     margin-left: 9px;
+    background: rgb(255, 255, 255);
 }
 .next{
     margin-left: 50px;
+}
+.anime{
+    animation: rotatePlayers 25s linear infinite ;
+}
+@keyframes rotatePlayers {
+    from{ transform: rotate(0deg);}
+    to{transform: rotate(3600deg);}
+}
+.song_name{
+    font-size: 1.5em;
 }
