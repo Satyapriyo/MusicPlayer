@@ -1,4 +1,4 @@
-const song = [
+const songs = [
   {
     song_name: "lamborhini",
     singer: "Jass Manak",
@@ -12,10 +12,10 @@ const song = [
     song: "we_rollin.mp3",
   },
   {
-    song_name: "yarra",
+    song_name: "yaara",
     singer: "Jass Manak",
     image: "yarra.png",
-    song: "yarra.mp3",
+    song: "yaara.mp3",
   },
 ];
 
@@ -46,20 +46,23 @@ play.addEventListener("click", () => {
   isPlay ? pauseMusic() : playMusic();
 });
 
-const loadSong = (song) => {
-  singer.textContent = song.singer;
-  song_name.textContent = song.song_name;
-  music.src = `music/${song.song}`;
-  img.src = `images/${song.image}`;
+const loadSong = (songs) => {
+  singer.textContent = songs.singer;
+  song_name.textContent = songs.song_name;
+  music.src = `music/${songs.song}`;
+  img.src = `images/${songs.image}`;
 };
-let songIndex = 2;
 
-next.addEventListener("click", nextSong);
-prev.addEventListener("click", prevSong());
+songIndex = 1;
 const prevSong = () => {
-  loadSong(song[songIndex]);
+  songIndex = (songIndex - 1 + songs.length) % songs.length;
+  loadSong(songs[songIndex]);
+  playMusic();
 };
 const nextSong = () => {
-  songIndex += 1;
-  loadSong(song[songIndex]);
+  songIndex = (songIndex + 1) % songs.length;
+  loadSong(songs[songIndex]);
+  playMusic();
 };
+next.addEventListener("click", nextSong);
+prev.addEventListener("click", prevSong);
