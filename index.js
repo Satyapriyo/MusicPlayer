@@ -29,17 +29,27 @@ const song_name = document.getElementById("song_name");
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
 
+const randBg = () => {
+  let a = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  let c = Math.floor(Math.random() * 256);
+  let bgc = "rgb(" + a + "," + b + "," + c + ")";
+  document.body.style.background = bgc;
+};
+
 const playMusic = () => {
   music.play();
   isPlay = true;
   play.classList.replace("fa-play", "fa-pause");
   img.classList.add("anime");
+ 
 };
 const pauseMusic = () => {
   music.pause();
   isPlay = false;
   play.classList.replace("fa-pause", "fa-play");
   img.classList.remove("anime");
+
 };
 
 play.addEventListener("click", () => {
@@ -58,11 +68,13 @@ const prevSong = () => {
   songIndex = (songIndex - 1 + songs.length) % songs.length;
   loadSong(songs[songIndex]);
   playMusic();
+  randBg();
 };
 const nextSong = () => {
   songIndex = (songIndex + 1) % songs.length;
   loadSong(songs[songIndex]);
   playMusic();
+  randBg();
 };
 next.addEventListener("click", nextSong);
 prev.addEventListener("click", prevSong);
